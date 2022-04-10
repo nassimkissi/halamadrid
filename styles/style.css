@@ -1,0 +1,181 @@
+/**
+* RESET CSS
+**/
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/**
+* CSS GLOBAL
+**/
+body {
+    background-color: #00529F;
+    color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #00529F;
+    padding: 0 20px;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+h2 {
+    text-transform: uppercase;
+}
+p {
+    font-size: 16px;
+    line-height: normal;
+}
+.logo {
+    padding: 10px 0;
+}
+.logo img {
+    width: 50%;
+    height: auto;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links a {
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 15px;
+    
+}
+.nav-links a:hover {
+    background-color: #fff;
+    padding: 15px;
+    color: #00529F;
+    border-radius: 50px;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.img-preview {
+    background: url('../images/teams.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+}
+.logo-team-home, .logo-team-away {
+    width: 60%;
+    height: auto;
+}
+@media screen and (max-width: 1024px) {
+    .nav-links{
+        width: 60%;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .logo img {
+        width: 40%;
+    }
+    .img-preview {
+        height: 260px;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 0vh;
+        background-color: #00529F;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+
+.nav-active{
+    transform: translateX(0%);
+    display: flex;
+}
+
+@keyframes navLinkeFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/**
+* MATCH SCHEDULE
+*/
+.match-schedule-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.match-infos {
+    width: 33.33%;
+    text-align: center;
+    padding: 20px;
+}
+.match-infos:nth-child(even){
+    background-color: #fff;
+    color: #00529F;
+}
+.match-infos .status-match {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+@media screen and (max-width: 768px) {
+    .match-schedule-list {
+        flex-direction: column;
+    }
+    .match-infos {
+        width: 100%;
+        padding: 20px 0px;
+    }
+}
